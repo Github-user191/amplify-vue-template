@@ -6,14 +6,17 @@ import "@aws-amplify/ui-vue/styles.css";
 </script>
 
 <template>
+
+  <router-view />
+
   <main>
 
-    <authenticator>
-      <template v-slot="{ signOut }">
-        <Todos />
-        <button @click="signOut">Sign Out</button>
-      </template>
-    </authenticator>
+  <amplify-authenticator>
+    <template v-slot:sign-in-header>
+      <h2>Welcome to My Custom Login</h2>
+    </template>
+  </amplify-authenticator>
+
   </main>
 </template>
 
